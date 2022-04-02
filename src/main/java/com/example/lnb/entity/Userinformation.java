@@ -13,7 +13,7 @@ public class Userinformation {
 
     private String uusername;
 
-    private int uage;
+    private String uage;
 
     private String usex;
 
