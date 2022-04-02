@@ -22,7 +22,7 @@ public interface LoginRegisterMapper {
      * 注册
      * @param users
      */
-    @Insert("INSERT INTO Users VALUES (#{username},#{password})")
+    @Insert("INSERT INTO Users(username,password) VALUES (#{username},#{password})")
     @Options(useGeneratedKeys = true,keyProperty = "username",keyColumn = "username")
     void register(Users users);
 

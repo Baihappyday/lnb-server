@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/lnb
+    url: jdbc:mysql://120.48.5.10:3306/lnb
     username: root
-    password: Fib@11235
+    password: Fib@112358
 
 server:
   port: 9090
