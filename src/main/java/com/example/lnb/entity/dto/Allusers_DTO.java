@@ -4,9 +4,10 @@ import lombok.Data;
 
 
 @Data
-public class Login_Register_DTO {
+public class Allusers_DTO {
 
     private String msg;
+
     private boolean judgeinfo;
 
 }

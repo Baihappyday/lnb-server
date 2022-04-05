@@ -8,13 +8,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor  //全参构造
 @NoArgsConstructor  //无参构造
 @Data //自动生成get和set方法
-@TableName("Users")  //指定数据库中的表
-public class Users {
+@TableName("Workers")  //指定数据库中的表
+public class Workers {
 
-    private String username;
+    private String wusername;
 
-    private String password;
+    private String wpassword;
 
-    private int account;
+    private int waccount;
+
+    private int wscore;
 
 }
