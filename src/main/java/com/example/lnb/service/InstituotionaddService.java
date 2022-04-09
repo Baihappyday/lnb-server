@@ -20,11 +20,13 @@ public class InstituotionaddService {
                 institutions1.setIiusername(institutions.getIiusername());
                 institutions1.setIaddress(institutions.getIaddress());
                 institutions1.setIname(institutions.getIname());
+                institutions1.setIprice(institutions.getIprice());
                 institutions1.setIdescription(institutions.getIdescription());
                 institutionaddMapper.institutionadd(institutions);
                 result.setIaddress(institutions1.getIaddress());
                 result.setIiusername(institutions1.getIiusername());
                 result.setIname(institutions1.getIname());
+                result.setIprice(institutions1.getIprice());
                 result.setIdescription(institutions1.getIdescription());
             }
             else{

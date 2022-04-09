@@ -10,7 +10,7 @@ public class Orders_DTO {
     String wusername;
     String otype;
     String oduration;
-    String oscore;
+    Integer oscore;
     String ostate;
     Integer oprice;
     String odescription;
