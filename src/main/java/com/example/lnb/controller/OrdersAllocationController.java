@@ -17,7 +17,7 @@ public class OrdersAllocationController {
      * 需要传入两个值：当前用户名，订单状态（对应编号）
      * @param username
      * @param ostate
-     * @return
+     * @return 返回一个List表
      */
     @PostMapping("/userOrderList")
     public List userOrderList(@RequestParam("username") String username, @RequestParam("ostate") String ostate){
