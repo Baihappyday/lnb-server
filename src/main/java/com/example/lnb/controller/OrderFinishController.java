@@ -18,7 +18,7 @@ public class OrderFinishController {
      * 订单完成
      * @param OID 订单ID
      * @param username 用户名
-     * @return 顺利订单完成返回true，否则返回error
+     * @return msg：订单是否完成
      */
     @PostMapping("/orderFinish")
     public OrderFinish_DTO orderFinish(@RequestParam("OID") Integer OID, @RequestParam("username") String username){
