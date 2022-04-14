@@ -15,7 +15,7 @@ public class OrderAccessController {
     @Autowired
     private OrderAccessService OrderAccessService;
 
-    @PostMapping("AccessOrder")
+    @PostMapping("/AccessOrder")
     public @ResponseBody Orders_DTO register( Orders orders){
         return OrderAccessService.Access(orders);
     }
