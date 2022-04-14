@@ -12,7 +12,7 @@ import java.util.List;
 public class OrdersworkerListController {
     @Autowired
     private OrdersworkerListServices OrdersworkerListServices;
-    @PostMapping("/never gonna give you up")
+    @PostMapping("/GetworkerList")
     public List userOrderList(@RequestParam("ostate") String ostate){
         return OrdersworkerListServices.workerOrderlist(ostate);
     }
