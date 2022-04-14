@@ -20,11 +20,10 @@ public class OrderAccessService {
             Orders accessOrder = OrderAccessMapper.selectorders(Orders.getOID());
             String orderstate = accessOrder.getOstate();
             if (accessOrder != null) {
-                if (orderstate != "0") {
-                    result.setMsg("403，已经有人领取此任务");
-                }
-                else{OrderAccessMapper.AccessOrders(Orders,Orders.getOID());
-                result.setMsg("获取任务成功");}
+                    OrderAccessMapper.AccessOrders(Orders,Orders.getOID());
+                    result.setMsg("获取任务成功");
+
+
             } else {
                 result.setMsg("404，任务消失啦！");
             }
