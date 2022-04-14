@@ -11,9 +11,9 @@ import java.util.List;
 @Mapper
 public interface OrderAccessMapper {
 /**
- * 家政人员任务列表
+ * 找出目标任务
  */
-    @Select("SELECT * FROM Orders WHERE OID=#{OID}")
+    @Select("SELECT * FROM Orders WHERE OID=#{OID} AND Ostate=0")
     Orders selectorders(@Param("OID") Integer OID);
 /**
  * 更新目标任务状态
