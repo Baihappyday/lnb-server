@@ -13,13 +13,13 @@ public interface OrderAccessMapper {
 /**
  * 找出目标任务
  */
-    @Select("SELECT * FROM Orders WHERE OID=#{OID} AND Ostate=0")
+    @Select("SELECT * FROM Orders WHERE OID=#{OID} AND ostate=0")
     Orders selectorders(@Param("OID") Integer OID);
 /**
  * 更新目标任务状态
  */
 
-    @Update("UPDATE Orders SET ostate=1 WHERE OID=#{OID}")
-    void  AccessOrders(Orders orders,@Param("OID") Integer oid);
+    @Update("UPDATE Orders SET ostate=1, wusername=#{wusername} WHERE OID=#{OID}")
+    void  AccessOrders(Orders orders,@Param("wusername") String wusername,@Param("OID") Integer oid);
 
 }
