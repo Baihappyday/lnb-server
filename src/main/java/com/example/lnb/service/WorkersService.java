@@ -2,6 +2,7 @@ package com.example.lnb.service;
 
 import com.example.lnb.entity.dto.Allusers_DTO;
 import com.example.lnb.entity.Workers;
+import com.example.lnb.entity.dto.Workers_DTO;
 import com.example.lnb.mapper.WorkersMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,8 +39,8 @@ public class WorkersService {
     /**
      * 登录
      */
-    public Allusers_DTO login(Workers workers){
-        Allusers_DTO result=new Allusers_DTO();
+    public Workers_DTO login(Workers workers) {
+        Workers_DTO result=new Workers_DTO();
         result.setJudgeinfo(false);
         try {
             Workers userTemp = workersMapper.login(workers);
@@ -48,6 +49,8 @@ public class WorkersService {
             }else {
                 result.setMsg("登录成功");
                 result.setJudgeinfo(true);
+                result.setWaccount(userTemp.getWaccount());
+                result.setWscore(userTemp.getWscore());
             }
         }catch (Exception e){
             result.setMsg(e.getMessage());

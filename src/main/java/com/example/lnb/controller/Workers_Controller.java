@@ -2,6 +2,7 @@ package com.example.lnb.controller;
 
 import com.example.lnb.entity.dto.Allusers_DTO;
 import com.example.lnb.entity.Workers;
+import com.example.lnb.entity.dto.Workers_DTO;
 import com.example.lnb.service.WorkersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +28,7 @@ public class Workers_Controller {
      * 登录
      */
     @PostMapping("/login/workers")
-    public Allusers_DTO login(@RequestBody Workers workers){
+    public Workers_DTO login(@RequestBody Workers workers){
         return workersService.login(workers);
     }
 
