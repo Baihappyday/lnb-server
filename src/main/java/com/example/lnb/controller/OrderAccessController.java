@@ -15,7 +15,7 @@ public class OrderAccessController {
     private com.example.lnb.service.OrderAccessService OrderAccessService;
 
     @PostMapping("/AccessOrder")
-    public  Orders_DTO register(@RequestBody Orders orders, String wusername){
-        return OrderAccessService.Access(orders,wusername);
+    public  Orders_DTO register(@RequestBody Orders orders){
+        return OrderAccessService.Access(orders);
     }
 }
