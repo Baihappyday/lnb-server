@@ -20,6 +20,6 @@ public interface OrderAccessMapper {
  */
 
     @Update("UPDATE Orders SET ostate=1, wusername=#{wusername} WHERE OID=#{OID}")
-    void  AccessOrders(Orders orders,@Param("wusername") String wusername,@Param("OID") Integer oid);
+    void  AccessOrders(@Param("wusername") String wusername,@Param("OID") Integer oid);
 
 }

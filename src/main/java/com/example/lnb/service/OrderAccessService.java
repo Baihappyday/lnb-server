@@ -14,13 +14,13 @@ public class OrderAccessService {
     @Autowired
     private OrderAccessMapper OrderAccessMapper;
 
-    public Orders_DTO Access(Orders Orders,String wusername){
+    public Orders_DTO Access(Orders Orders){
         Orders_DTO result =new Orders_DTO();
         try {
             Orders accessOrder = OrderAccessMapper.selectorders(Orders.getOID());
             //String orderstate = accessOrder.getOstate();
             if (accessOrder != null) {
-                    OrderAccessMapper.AccessOrders(Orders,wusername,Orders.getOID());
+                    OrderAccessMapper.AccessOrders(Orders.getWusername(),Orders.getOID());
                     result.setMsg("获取任务成功");
 
 

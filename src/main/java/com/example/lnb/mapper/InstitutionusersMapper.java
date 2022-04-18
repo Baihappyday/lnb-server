@@ -1,5 +1,6 @@
 package com.example.lnb.mapper;
 
+import com.example.lnb.entity.Institutions;
 import com.example.lnb.entity.Institutionusers;
 import org.apache.ibatis.annotations.*;
 
@@ -18,6 +19,8 @@ public interface InstitutionusersMapper {
     @Insert("INSERT INTO Institutionusers VALUES (#{iusername},#{ipassword})")
     @Options(useGeneratedKeys = true,keyProperty = "iusername",keyColumn = "iusername")
     void register(Institutionusers institutionusers);
+
+
 
     /**
      * 登录

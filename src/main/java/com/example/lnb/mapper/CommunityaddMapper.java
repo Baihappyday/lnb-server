@@ -1,13 +1,14 @@
 package com.example.lnb.mapper;
 
 import com.example.lnb.entity.Communities;
+import com.example.lnb.entity.Communityusers;
 import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface CommunityaddMapper {
-    @Select("SELECT * FROM Communityusers join Communities WHERE Communities.ccusername=Communityusers.cusername and Communities.ccusername=#{ccusername}")
-    Communities findcommunitybyccusername(@Param("ccusername") String ccusername);
+    @Select("SELECT * FROM Communityusers WHERE Communityusers.cusername=#{ccusername}")
+    Communityusers findcommunitybyccusername(@Param("ccusername") String ccusername);
 
-    @Update("update Communities set caddress=#{caddress},cname=#{cname},cdescription=#{cdescription} where ccusername=#{ccusername}")
+    @Insert("INSERT INTO Communities VALUES (#{ccusername},#{caddress},#{cname},#{cdescription})")
     void communityadd(Communities communities);
 }

@@ -17,4 +17,8 @@ public class Institutions {
     private String iname;
     private Integer iprice;
     private String idescription;
+
+    public Institutions(String iusername) {
+        this.iiusername = iusername;
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.lnb.service;
 
 import com.example.lnb.entity.Institutions;
+import com.example.lnb.entity.Institutionusers;
 import com.example.lnb.entity.dto.Institution_Add_DTO;
 import com.example.lnb.mapper.InstitutionaddMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,20 +15,15 @@ public class InstituotionaddService {
     public Institution_Add_DTO add(Institutions institutions){
         Institution_Add_DTO result = new Institution_Add_DTO();
         try{
-            Institutions institutions1 = institutionaddMapper.findinstitutionbyiiusername(institutions.getIiusername());
+            Institutionusers institutions1 = institutionaddMapper.findinstitutionbyiiusername(institutions.getIiusername());
             if(institutions1!=null){
                 result.setMsg("true");
-                institutions1.setIiusername(institutions.getIiusername());
-                institutions1.setIaddress(institutions.getIaddress());
-                institutions1.setIname(institutions.getIname());
-                institutions1.setIprice(institutions.getIprice());
-                institutions1.setIdescription(institutions.getIdescription());
                 institutionaddMapper.institutionadd(institutions);
-                result.setIaddress(institutions1.getIaddress());
-                result.setIiusername(institutions1.getIiusername());
-                result.setIname(institutions1.getIname());
-                result.setIprice(institutions1.getIprice());
-                result.setIdescription(institutions1.getIdescription());
+                result.setIaddress(institutions.getIaddress());
+                result.setIiusername(institutions.getIiusername());
+                result.setIname(institutions.getIname());
+                result.setIprice(institutions.getIprice());
+                result.setIdescription(institutions.getIdescription());
             }
             else{
                 result.setMsg("false");

@@ -1,5 +1,6 @@
 package com.example.lnb.service;
 
+import com.example.lnb.entity.Institutions;
 import com.example.lnb.entity.dto.Allusers_DTO;
 import com.example.lnb.entity.Institutionusers;
 import com.example.lnb.mapper.InstitutionusersMapper;
