@@ -5,6 +5,7 @@ import com.example.lnb.entity.dto.Orders_DTO;
 import com.example.lnb.service.OrderAccessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,7 +15,7 @@ public class OrderAccessController {
     private com.example.lnb.service.OrderAccessService OrderAccessService;
 
     @PostMapping("/AccessOrder")
-    public @ResponseBody Orders_DTO register(Orders orders,String wusername){
+    public  Orders_DTO register(@RequestBody Orders orders, String wusername){
         return OrderAccessService.Access(orders,wusername);
     }
 }
